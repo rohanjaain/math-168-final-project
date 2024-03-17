@@ -1,9 +1,11 @@
 from enum import Enum, auto
 import requests
-from dotenv import load_dotenv
+import sys
+from dotenv.main import load_dotenv
 load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
+
 class Categories(Enum):
     HOME = auto()
     GROCERY_STORE = auto()
@@ -55,6 +57,32 @@ class Walkability:
         for matrix in matrix_list:
             combined_matrix.extend(matrix)
         return combined_matrix
+    
+    # shortest_walk_with_this_path
+    # input a list of catergories where each catergoy is chosen in order
+    # set previous to index 0
+    # get a categories_to_indexes[catergories.(whatever)]
+    def random_walk(self, order_of_destinations):
+        prev = 0
+        total_distance = 0
+        total_steps = 0
+        print(f"From {self.locations[0].name}")
+        for categories in order_of_destinations:
+            minimum_distance = sys.maxsize
+            minimum_index = -1
+            for index in self.categories_to_indexes[categories]:
+                if self.duration_matrix[prev][index] < minimum_distance:
+                    minimum_distance = self.duration_matrix[prev][index]
+                    minimum_index = index
+            print(f"To {self.locations[minimum_index].name}")
+            prev = minimum_index
+            total_steps += 1
+            total_distance += minimum_distance
+        print(f"To {self.locations[0].name}")
+        total_steps += 1
+        total_distance += self.duration_matrix[prev][0]
+        average_distance_per_step = total_distance / total_steps
+        return average_distance_per_step
 
     def set_home_address(self, new_address):
         if isinstance(new_address, str):
@@ -137,62 +165,46 @@ def test_get_walking_directions_matrices():
 westwood_locations = [
     # Museums
     Location("Fowler", (34.07295131764241, -118.4430971751043), Categories.MEUSUM),
-    Location("Hammer", (34.058969830022825, -118.44372707997064), Categories.MEUSUM),
-    Location("UCLA Metieoritte Gallery", (34.070011702924354, -118.44097314749347), Categories.MEUSUM),
+    # Location("Hammer", (34.058969830022825, -118.44372707997064), Categories.MEUSUM),
+    # Location("UCLA Metieoritte Gallery", (34.070011702924354, -118.44097314749347), Categories.MEUSUM),
     
     # Grocery Stores
     Location("Ralphs Fare Fresh", (34.063545627687496, -118.44452510013357), Categories.GROCERY_STORE),
-    Location("Target Grocery", (34.063185517875056, -118.4439900903507), Categories.GROCERY_STORE),
-    Location("Trader Joe's", (34.062465293659386, -118.44378946168212), Categories.GROCERY_STORE),
-    Location("99 Ranch", (34.05639854677763, -118.44198380366491), Categories.GROCERY_STORE),
-    Location("Bristol Farms", (34.053766717882034, -118.44054596487344), Categories.GROCERY_STORE),
-    Location("Sprouts Farms Market", (34.05116251202463, -118.43853967818764), Categories.GROCERY_STORE),
-    Location("Whole Foods", (34.06127414017762, -118.44686576793366), Categories.GROCERY_STORE),
-    Location("Tochal Market", (34.05498065400885, -118.44126722505742), Categories.GROCERY_STORE),
-    Location("Shater Abbass Bakery & Market", (34.054599070362606, -118.4413963877709), Categories.GROCERY_STORE),
-    Location("Jordan Market", (34.05442172919427, -118.44124922547164), Categories.GROCERY_STORE),
+    # Location("Target Grocery", (34.063185517875056, -118.4439900903507), Categories.GROCERY_STORE),
+    # Location("Trader Joe's", (34.062465293659386, -118.44378946168212), Categories.GROCERY_STORE),
+    # Location("99 Ranch", (34.05639854677763, -118.44198380366491), Categories.GROCERY_STORE),
+    # Location("Bristol Farms", (34.053766717882034, -118.44054596487344), Categories.GROCERY_STORE),
+    # Location("Sprouts Farms Market", (34.05116251202463, -118.43853967818764), Categories.GROCERY_STORE),
+    # Location("Whole Foods", (34.06127414017762, -118.44686576793366), Categories.GROCERY_STORE),
+    # Location("Tochal Market", (34.05498065400885, -118.44126722505742), Categories.GROCERY_STORE),
+    # Location("Shater Abbass Bakery & Market", (34.054599070362606, -118.4413963877709), Categories.GROCERY_STORE),
+    # Location("Jordan Market", (34.05442172919427, -118.44124922547164), Categories.GROCERY_STORE),
     
     # # Parks/Outdoor Spaces
     Location("Franklin D. Murphy Sculpture Garden", (34.075054982302994, -118.43999402069396), Categories.OUTDOOR_SPACES),
-    Location("Janns Steps", (34.072187186585474, -118.443604590362), Categories.OUTDOOR_SPACES),
+    # Location("Janns Steps", (34.072187186585474, -118.443604590362), Categories.OUTDOOR_SPACES),
     Location("UCLA Mathias Botanical Garden", (34.06657407849101, -118.4415245206948), Categories.OUTDOOR_SPACES),
-    Location("Holmby Park", (34.072328951465416, -118.42965135371733), Categories.OUTDOOR_SPACES),
-    Location("Westwood Gardens Park", (34.057350296959, -118.44163610041117), Categories.OUTDOOR_SPACES),
-    Location("Westwood Park", (34.053292222987984, -118.44830587248427), Categories.OUTDOOR_SPACES),
-    Location("Sunset Canyon Recreation Center", (34.07472519888769, -118.45154393662891), Categories.OUTDOOR_SPACES),
+    # Location("Holmby Park", (34.072328951465416, -118.42965135371733), Categories.OUTDOOR_SPACES),
+    # Location("Westwood Gardens Park", (34.057350296959, -118.44163610041117), Categories.OUTDOOR_SPACES),
+    # Location("Westwood Park", (34.053292222987984, -118.44830587248427), Categories.OUTDOOR_SPACES),
+    # Location("Sunset Canyon Recreation Center", (34.07472519888769, -118.45154393662891), Categories.OUTDOOR_SPACES),
 
     # Libraries
     Location("Science and Engineering Library/Geology", (34.06919911706539, -118.44067281447126), Categories.LIBRARY),
-    Location("UCLA Science and Engineering Library", (34.06890059753678, -118.44267488565191), Categories.LIBRARY),
-    Location("UCLA Louise M. Darling Biomedical Library", (34.06637972401974, -118.44187405717965), Categories.LIBRARY),
-    Location("Westwood Branch Library", (34.05788780880445, -118.44179397433243), Categories.LIBRARY),
+    # Location("UCLA Science and Engineering Library", (34.06890059753678, -118.44267488565191), Categories.LIBRARY),
+    # Location("UCLA Louise M. Darling Biomedical Library", (34.06637972401974, -118.44187405717965), Categories.LIBRARY),
+    # Location("Westwood Branch Library", (34.05788780880445, -118.44179397433243), Categories.LIBRARY),
     Location("Powell Library", (34.07158723542848, -118.44215434714495), Categories.LIBRARY),
-    Location("UCLA Music Library", (34.070990212148736, -118.44035248308232), Categories.LIBRARY),
-    Location("UCLA Rosenfeld Library", (34.074273788120244, -118.4435157555478), Categories.LIBRARY),
-    Location("Charles E. Young Research Library", (34.07487078825886, -118.4414736429435), Categories.LIBRARY),
+    # Location("UCLA Music Library", (34.070990212148736, -118.44035248308232), Categories.LIBRARY),
+    # Location("UCLA Rosenfeld Library", (34.074273788120244, -118.4435157555478), Categories.LIBRARY),
+    # Location("Charles E. Young Research Library", (34.07487078825886, -118.4414736429435), Categories.LIBRARY),
 
     # Medical
     Location("Ronald Raegan", (34.06568666470719, -118.44575099010206), Categories.MEDICAL),
-    Location("Ashe Center", (34.07130232965063, -118.44475761899842), Categories.MEDICAL),
-    Location("UCLA Health Westwood Immediate Care", (34.065031025948734, -118.44637409160573), Categories.MEDICAL)
+    # Location("Ashe Center", (34.07130232965063, -118.44475761899842), Categories.MEDICAL),
+    # Location("UCLA Health Westwood Immediate Care", (34.065031025948734, -118.44637409160573), Categories.MEDICAL)
     ]
 
 
 a = Walkability(westwood_locations)
-
-def get_dimensions(matrix):
-    num_rows = len(matrix)
-    num_columns = len(matrix[0]) if matrix else 0  # Assuming all rows have the same length
-    
-    return num_rows, num_columns
-
-rows, columns = get_dimensions(a.distance_matrix)
-print("Number of rows:", rows)
-print("Number of columns:", columns)
-
-def print_matrix(matrix):
-    for row in matrix:
-        print(" ".join(map(str, row)))
-
-print_matrix(a.distance_matrix)
-print_matrix(a.duration_matrix)
+a.random_walk([Categories.GROCERY_STORE, Categories.LIBRARY, Categories.OUTDOOR_SPACES, Categories.COFFEE_SHOP])
