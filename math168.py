@@ -1,6 +1,7 @@
 from enum import Enum, auto
 import requests
 import sys
+import os
 from dotenv.main import load_dotenv
 
 load_dotenv()
@@ -11,19 +12,23 @@ API_KEY = os.getenv("API_KEY")
 class Categories(Enum):
     HOME = auto()
     GROCERY_STORE = auto()
-    MEUSUM = auto()
+    MUSEUM = auto()
     LIBRARY = auto()
     COFFEE_SHOP = auto()
     MEDICAL = auto()
-    RESTURANT = auto()
+    FASTFOOD = auto()
+    RESTAURANT = auto()
     OUTDOOR_SPACES = auto()
+    FOOD_AMERICAN = auto()
 
 
 class Location:
-    def __init__(self, name, coordinates, category):
+    def __init__(self, name, coordinates, categories):
         self.name = name
         self.coordinates = coordinates
-        self.category = category
+        if not isinstance(categories, set):
+            categories = {categories}
+        self.categories = categories
 
 
 class Walkability:
@@ -42,7 +47,7 @@ class Walkability:
             )
         self.categories_to_indexes = {
             category: [
-                i for i, loc in enumerate(self.locations) if loc.category == category
+                i for i, loc in enumerate(self.locations) if category in loc.categories
             ]
             for category in Categories
         }
@@ -102,7 +107,7 @@ class Walkability:
                 if self.duration_matrix[prev][index] < minimum_distance:
                     minimum_distance = self.duration_matrix[prev][index]
                     minimum_index = index
-            print(f"To {self.locations[minimum_index].name}")
+            print(f"To {self.locations[minimum_index].name}, {categories}")
             prev = minimum_index
             total_steps += 1
             total_distance += minimum_distance
@@ -204,9 +209,9 @@ def test_get_walking_directions_matrices():
 
 westwood_locations = [
     # Museums
-    Location("Fowler", (34.07295131764241, -118.4430971751043), Categories.MEUSUM),
-    # Location("Hammer", (34.058969830022825, -118.44372707997064), Categories.MEUSUM),
-    # Location("UCLA Metieoritte Gallery", (34.070011702924354, -118.44097314749347), Categories.MEUSUM),
+    Location("Fowler", (34.07295131764241, -118.4430971751043), Categories.MUSEUM),
+    # Location("Hammer", (34.058969830022825, -118.44372707997064), Categories.MUSEUM),
+    # Location("UCLA Meteorite Gallery", (34.070011702924354, -118.44097314749347), Categories.MUSEUM),
     # Grocery Stores
     Location(
         "Ralphs Fare Fresh",
@@ -259,15 +264,85 @@ westwood_locations = [
     ),
     # Location("Ashe Center", (34.07130232965063, -118.44475761899842), Categories.MEDICAL),
     # Location("UCLA Health Westwood Immediate Care", (34.065031025948734, -118.44637409160573), Categories.MEDICAL)
+    # Coffee Shops
+    Location(
+        "Starbucks Broxton & Weyburn",
+        (34.062813417291395, -118.44734600020898),
+        Categories.COFFEE_SHOP,
+    ),
+    # Fast Food
+    Location(
+        "In-N-Out Burger",
+        (34.0678046489839, -118.44676173368809),
+        {Categories.RESTAURANT, Categories.FASTFOOD},
+    ),
+    Location(
+        "Taco Bell",
+        (34.06288685898035, -118.44671980255414),
+        {Categories.RESTAURANT, Categories.FASTFOOD},
+    ),
+    Location(
+        "Chick-fil-A",
+        (34.063532040390264, -118.44512449939936),
+        {Categories.RESTAURANT, Categories.FASTFOOD},
+    ),
+    Location(
+        "Chipotle Mexican Grill",
+        (34.06116982000721, -118.44633039784706),
+        {Categories.RESTAURANT, Categories.FASTFOOD},
+    ),
+    Location(
+        "CAVA",
+        (34.061216789951025, -118.44634902374378),
+        {Categories.RESTAURANT, Categories.FASTFOOD},
+    ),
+    Location(
+        "Subway at Ronald Raegan",
+        (34.06654648085844, -118.446500273193),
+        {Categories.RESTAURANT, Categories.FASTFOOD},
+    ),
+    Location(
+        "Subway at Court of Sciences",
+        (34.06829417589296, -118.44224648935402),
+        {Categories.RESTAURANT, Categories.FASTFOOD},
+    ),
+    Location(
+        "Subway at Westwood Blvd",
+        (34.05936160936182, -118.44478682399304),
+        {Categories.RESTAURANT, Categories.FASTFOOD},
+    ),
+    # Restaurants
+    Location(
+        "BJ's Restaurant & Brewhouse",
+        (34.06291014508286, -118.4472550323028),
+        {Categories.RESTAURANT, Categories.FOOD_AMERICAN},
+    ),
 ]
 
 
-a = Walkability(westwood_locations)
-a.random_walk(
-    [
-        Categories.GROCERY_STORE,
-        Categories.LIBRARY,
-        Categories.OUTDOOR_SPACES,
-        Categories.COFFEE_SHOP,
+if __name__ == "__main__":
+    a = Walkability(westwood_locations)
+    routes = [
+        [
+            Categories.COFFEE_SHOP,
+            Categories.LIBRARY,
+            Categories.FASTFOOD,
+            Categories.GROCERY_STORE,
+        ],
+        [
+            Categories.MEDICAL,
+            Categories.COFFEE_SHOP,
+            Categories.GROCERY_STORE,
+        ],
+        [
+            Categories.MUSEUM,
+            Categories.OUTDOOR_SPACES,
+            Categories.FOOD_AMERICAN,
+        ],
     ]
-)
+    route_total_dist = 0
+    for route in routes:
+        route_avg_dist = a.random_walk(route)
+        print(f"avg_dist: {route_avg_dist} meters\n")
+        route_total_dist += route_avg_dist
+    print(f"avg_dist: {route_total_dist/len(routes)} meters")
