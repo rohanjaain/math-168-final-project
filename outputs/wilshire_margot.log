@@ -8,14 +8,14 @@ To Westwood Branch Library, Categories.LIBRARY
 To Denny's, Categories.FASTFOOD
 To Westwood Branch Library, Categories.LIBRARY
 To Home
-avg_dist: 606.6 seconds
+avg_dist: 610.0 seconds
 
 From Home
 To Starbucks at Target, Categories.COFFEE_SHOP
 To Westwood Branch Library, Categories.LIBRARY
 To 99 Ranch, Categories.GROCERY_STORE
 To Home
-avg_dist: 681.5 seconds
+avg_dist: 680.5 seconds
 
 From Home
 To Hammer, Categories.MUSEUM
@@ -23,7 +23,7 @@ To Starbucks at Westwood & Lindbrook, Categories.COFFEE_SHOP
 To Westwood Gardens Park, Categories.OUTDOOR_SPACES
 To Subway at Westwood Blvd, Categories.RESTAURANT
 To Home
-avg_dist: 548.0 seconds
+avg_dist: 549.4 seconds
 
 From Home
 To The Boiling Crab, Categories.FOOD_AMERICAN
@@ -31,13 +31,13 @@ To Sharetea, Categories.DESSERTS
 To Starbucks at Broxton & Weyburn, Categories.COFFEE_SHOP
 To Westwood Gardens Park, Categories.OUTDOOR_SPACES
 To Home
-avg_dist: 611.0 seconds
+avg_dist: 615.0 seconds
 
 From Home
 To UCLA Health Westwood Immediate Care, Categories.MEDICAL
 To Ralphs Fare Fresh, Categories.GROCERY_STORE
 To Home
-avg_dist: 906.3333333333334 seconds
+avg_dist: 928.6666666666666 seconds
 
 From Home
 To Frida Mexican Cuisine - Westwood, Categories.FOOD_MEXICAN
@@ -45,21 +45,21 @@ To Westwood Gardens Park, Categories.OUTDOOR_SPACES
 To Subway at Westwood Blvd, Categories.RESTAURANT
 To Sharetea, Categories.DESSERTS
 To Home
-avg_dist: 626.2 seconds
+avg_dist: 632.0 seconds
 
 From Home
 To Westwood Branch Library, Categories.LIBRARY
 To Starbucks at Westwood & Lindbrook, Categories.COFFEE_SHOP
 To First Szechuan Wok, Categories.FOOD_ASIAN
 To Home
-avg_dist: 605.5 seconds
+avg_dist: 606.5 seconds
 
 From Home
 To Westwood Gardens Park, Categories.OUTDOOR_SPACES
 To Starbucks at Westwood & Lindbrook, Categories.COFFEE_SHOP
 To Frida Mexican Cuisine - Westwood, Categories.FOOD_MEXICAN
 To Home
-avg_dist: 615.75 seconds
+avg_dist: 616.5 seconds
 
 From Home
 To Nick the Greek, Categories.FOOD_MIDDLE_EASTERN
@@ -67,7 +67,7 @@ To Dunkin', Categories.DESSERTS
 To Dunkin', Categories.COFFEE_SHOP
 To Westwood Branch Library, Categories.LIBRARY
 To Home
-avg_dist: 611.2 seconds
+avg_dist: 613.8 seconds
 
 From Home
 To Frida Mexican Cuisine - Westwood, Categories.RESTAURANT
@@ -75,6 +75,8 @@ To Starbucks at Westwood & Lindbrook, Categories.COFFEE_SHOP
 To Hammer, Categories.MUSEUM
 To Westwood Gardens Park, Categories.OUTDOOR_SPACES
 To Home
-avg_dist: 495.8 seconds
+avg_dist: 499.0 seconds
 
-avg_dist: 630.7883333333333 seconds
+normal avg_dist: 635.1366666666667 seconds
+no_library avg_dist: 637.8666666666666 seconds
+no_grocery avg_dist: 616.3092592592593 seconds

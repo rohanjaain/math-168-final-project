@@ -132,6 +132,24 @@ class Walkability:
                 self.home_address = None
         else:
             self.home_address = None
+        # also update the distance and duration matrices
+        if self.home_address:
+            num_locations = len(self.locations)
+            self.locations[0] = Location("Home", self.home_address, Categories.HOME)
+            self.coordinates_list[0] = self.home_address
+            origin_coordinates = [self.home_address]
+            for i in range(1, num_locations):
+                destination_coordinates = [self.locations[i].coordinates]
+                distance_matrix_batch, duration_matrix_batch = (
+                    get_walking_directions_matrices(
+                        origin_coordinates, destination_coordinates, API_KEY
+                    )
+                )
+                self.distance_matrix[0][i] = distance_matrix_batch[0][0]
+                self.duration_matrix[0][i] = duration_matrix_batch[0][0]
+
+                self.distance_matrix[i][0] = distance_matrix_batch[0][0]
+                self.duration_matrix[i][0] = duration_matrix_batch[0][0]
 
     def set_new_home_address(self, new_address):
         self.set_home_address(new_address)
@@ -304,15 +322,13 @@ westwood_locations = [
 
 
 if __name__ == "__main__":
-    court_of_sciences = (34.067688225046496, -118.4421236503499)
-    deneve_plaza = (34.07049072178088, -118.45009921519527)
-    hedrick_summit = (34.073901567246224, -118.45274767364155)
-    gaylay_heights = (34.06377741682311, -118.44862673399743)
-    wilshire_margot = (34.062067885415914, -118.43366846640919)
-
-    a = Walkability(westwood_locations, home_address=hedrick_summit)
-
-    print(f"Home: {"Hedrick Summit"} {hedrick_summit}\n\n---\n")
+    homes = {
+        "Court of Sciences": (34.067688225046496, -118.4421236503499),
+        "Deneve Plaza": (34.07049072178088, -118.45009921519527),
+        "Hedrick Summit": (34.073901567246224, -118.45274767364155),
+        "Gayley Heights": (34.06377741682311, -118.44862673399743),
+        "Wilshire Margot": (34.062067885415914, -118.43366846640919),
+    }
 
     # fmt: off
     routes = [
@@ -329,9 +345,41 @@ if __name__ == "__main__":
     ]
     # fmt: on
 
-    route_total_duration = 0
-    for route in routes:
-        route_avg_duration = a.random_walk(route)
-        print(f"avg_dist: {route_avg_duration} seconds\n")
-        route_total_duration += route_avg_duration
-    print(f"avg_dist: {route_total_duration/len(routes)} seconds")
+    normal_weights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    no_library = [0.25, 0.5, 1, 1, 1, 1, 0.5, 1, 0.5, 1]
+    no_grocery = [1, 0.5, 1, 1, 0.5, 1, 1, 1, 1, 1]
+
+    a = Walkability(westwood_locations)
+
+    for home, home_loc in homes.items():
+        a.set_new_home_address(home_loc)
+        print(f"Home: {home} {home_loc}\n\n---\n")
+
+        route_total_duration_normal = 0
+        route_total_duration_no_library = 0
+        route_total_duration_no_grocery = 0
+        for route in routes:
+            route_avg_duration = a.random_walk(route)
+            print(f"avg_dist: {route_avg_duration} seconds\n")
+            route_total_duration_normal += (
+                route_avg_duration * normal_weights[routes.index(route)]
+            )
+            route_total_duration_no_library += (
+                route_avg_duration * no_library[routes.index(route)]
+            )
+            route_total_duration_no_grocery += (
+                route_avg_duration * no_grocery[routes.index(route)]
+            )
+
+        print(
+            f"normal avg_dist: {route_total_duration_normal / sum(normal_weights)} seconds"
+        )
+        print(
+            f"no_library avg_dist: {route_total_duration_no_library / sum(no_library)} seconds"
+        )
+        print(
+            f"no_grocery avg_dist: {route_total_duration_no_grocery / sum(no_grocery)} seconds"
+        )
+        print(
+            "\n===============================================================================\n"
+        )
