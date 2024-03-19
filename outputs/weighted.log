@@ -28,10 +28,9 @@ avg_dist: 254.4 seconds
 From Home
 To The Boiling Crab, Categories.FOOD_AMERICAN
 To Sharetea, Categories.DESSERTS
-To Starbucks at Broxton & Weyburn, Categories.COFFEE_SHOP
 To Westwood Gardens Park, Categories.OUTDOOR_SPACES
 To Home
-avg_dist: 580.0 seconds
+avg_dist: 659.25 seconds
 
 From Home
 To Ronald Raegan, Categories.MEDICAL
@@ -39,47 +38,9 @@ To Ralphs Fare Fresh, Categories.GROCERY_STORE
 To Home
 avg_dist: 418.0 seconds
 
-From Home
-To Pinches Tacos, Categories.FOOD_MEXICAN
-To Westwood Gardens Park, Categories.OUTDOOR_SPACES
-To Subway at Westwood Blvd, Categories.RESTAURANT
-To Sharetea, Categories.DESSERTS
-To Home
-avg_dist: 549.2 seconds
-
-From Home
-To UCLA Louise M. Darling Biomedical Library, Categories.LIBRARY
-To Starbucks at Target, Categories.COFFEE_SHOP
-To Mr. Rice, Categories.FOOD_ASIAN
-To Home
-avg_dist: 426.0 seconds
-
-From Home
-To UCLA Mathias Botanical Garden, Categories.OUTDOOR_SPACES
-To Starbucks at Target, Categories.COFFEE_SHOP
-To Pinches Tacos, Categories.FOOD_MEXICAN
-To Home
-avg_dist: 359.75 seconds
-
-From Home
-To Falafel Inc, Categories.FOOD_MIDDLE_EASTERN
-To Diddy Riese, Categories.DESSERTS
-To Starbucks at Broxton & Weyburn, Categories.COFFEE_SHOP
-To Westwood Branch Library, Categories.LIBRARY
-To Home
-avg_dist: 508.0 seconds
-
-From Home
-To Subway at Court of Sciences, Categories.RESTAURANT
-To Kerckhoff Coffee House, Categories.COFFEE_SHOP
-To UCLA Meteorite Gallery, Categories.MUSEUM
-To Janns Steps, Categories.OUTDOOR_SPACES
-To Home
-avg_dist: 309.0 seconds
-
-normal avg_dist: 412.66 seconds
-no_library avg_dist: 418.4161290322581 seconds
-no_grocery avg_dist: 407.5527777777778 seconds
+normal avg_dist: 65.76833333333335
+no_library avg_dist: 63.51967592592593
+no_grocery avg_dist: 67.02741228070175
 
 ===============================================================================
 
@@ -113,10 +74,9 @@ avg_dist: 504.0 seconds
 From Home
 To Fat Sal's Deli, Categories.FOOD_AMERICAN
 To Just Boba Tea House, Categories.DESSERTS
-To Dunkin', Categories.COFFEE_SHOP
 To Westwood Gardens Park, Categories.OUTDOOR_SPACES
 To Home
-avg_dist: 695.4 seconds
+avg_dist: 864.25 seconds
 
 From Home
 To Ashe Center, Categories.MEDICAL
@@ -124,47 +84,9 @@ To Ralphs Fare Fresh, Categories.GROCERY_STORE
 To Home
 avg_dist: 717.6666666666666 seconds
 
-From Home
-To Pinches Tacos, Categories.FOOD_MEXICAN
-To Westwood Gardens Park, Categories.OUTDOOR_SPACES
-To Subway at Westwood Blvd, Categories.RESTAURANT
-To Sharetea, Categories.DESSERTS
-To Home
-avg_dist: 677.4 seconds
-
-From Home
-To Powell Library, Categories.LIBRARY
-To Kerckhoff Coffee House, Categories.COFFEE_SHOP
-To HIBACHI PAPI, Categories.FOOD_ASIAN
-To Home
-avg_dist: 671.5 seconds
-
-From Home
-To Janns Steps, Categories.OUTDOOR_SPACES
-To Kerckhoff Coffee House, Categories.COFFEE_SHOP
-To Pinches Tacos, Categories.FOOD_MEXICAN
-To Home
-avg_dist: 745.25 seconds
-
-From Home
-To Falafel Inc, Categories.FOOD_MIDDLE_EASTERN
-To Diddy Riese, Categories.DESSERTS
-To Starbucks at Broxton & Weyburn, Categories.COFFEE_SHOP
-To Westwood Branch Library, Categories.LIBRARY
-To Home
-avg_dist: 658.2 seconds
-
-From Home
-To Subway at Ronald Raegan, Categories.RESTAURANT
-To Starbucks at Broxton & Weyburn, Categories.COFFEE_SHOP
-To Hammer, Categories.MUSEUM
-To Westwood Gardens Park, Categories.OUTDOOR_SPACES
-To Home
-avg_dist: 713.8 seconds
-
-normal avg_dist: 643.1266666666667 seconds
-no_library avg_dist: 663.7666666666667 seconds
-no_grocery avg_dist: 638.312037037037 seconds
+normal avg_dist: 47.76722222222222
+no_library avg_dist: 43.8292438271605
+no_grocery avg_dist: 49.33735380116959
 
 ===============================================================================
 
@@ -198,10 +120,9 @@ avg_dist: 635.6 seconds
 From Home
 To Fat Sal's Deli, Categories.FOOD_AMERICAN
 To Just Boba Tea House, Categories.DESSERTS
-To Dunkin', Categories.COFFEE_SHOP
 To Westwood Gardens Park, Categories.OUTDOOR_SPACES
 To Home
-avg_dist: 840.8 seconds
+avg_dist: 1046.0 seconds
 
 From Home
 To Ashe Center, Categories.MEDICAL
@@ -209,47 +130,9 @@ To Ralphs Fare Fresh, Categories.GROCERY_STORE
 To Home
 avg_dist: 973.6666666666666 seconds
 
-From Home
-To Pinches Tacos, Categories.FOOD_MEXICAN
-To Westwood Gardens Park, Categories.OUTDOOR_SPACES
-To Subway at Westwood Blvd, Categories.RESTAURANT
-To Sharetea, Categories.DESSERTS
-To Home
-avg_dist: 827.6 seconds
-
-From Home
-To UCLA Rosenfeld Library, Categories.LIBRARY
-To Kerckhoff Coffee House, Categories.COFFEE_SHOP
-To HIBACHI PAPI, Categories.FOOD_ASIAN
-To Home
-avg_dist: 880.25 seconds
-
-From Home
-To Sunset Canyon Recreation Center, Categories.OUTDOOR_SPACES
-To Kerckhoff Coffee House, Categories.COFFEE_SHOP
-To Pinches Tacos, Categories.FOOD_MEXICAN
-To Home
-avg_dist: 922.0 seconds
-
-From Home
-To Falafel Inc, Categories.FOOD_MIDDLE_EASTERN
-To Diddy Riese, Categories.DESSERTS
-To Starbucks at Broxton & Weyburn, Categories.COFFEE_SHOP
-To Westwood Branch Library, Categories.LIBRARY
-To Home
-avg_dist: 806.6 seconds
-
-From Home
-To Subway at Ronald Raegan, Categories.RESTAURANT
-To Starbucks at Broxton & Weyburn, Categories.COFFEE_SHOP
-To Hammer, Categories.MUSEUM
-To Westwood Gardens Park, Categories.OUTDOOR_SPACES
-To Home
-avg_dist: 864.0 seconds
-
-normal avg_dist: 814.4166666666667 seconds
-no_library avg_dist: 834.4924731182796 seconds
-no_grocery avg_dist: 803.7453703703704 seconds
+normal avg_dist: 32.518055555555556
+no_library avg_dist: 28.160956790123457
+no_grocery avg_dist: 35.16739766081871
 
 ===============================================================================
 
@@ -283,10 +166,9 @@ avg_dist: 436.2 seconds
 From Home
 To Fat Sal's Deli, Categories.FOOD_AMERICAN
 To Just Boba Tea House, Categories.DESSERTS
-To Dunkin', Categories.COFFEE_SHOP
 To Westwood Gardens Park, Categories.OUTDOOR_SPACES
 To Home
-avg_dist: 405.2 seconds
+avg_dist: 501.5 seconds
 
 From Home
 To UCLA Health Westwood Immediate Care, Categories.MEDICAL
@@ -294,47 +176,9 @@ To Ralphs Fare Fresh, Categories.GROCERY_STORE
 To Home
 avg_dist: 305.0 seconds
 
-From Home
-To Pinches Tacos, Categories.FOOD_MEXICAN
-To Westwood Gardens Park, Categories.OUTDOOR_SPACES
-To Subway at Westwood Blvd, Categories.RESTAURANT
-To Sharetea, Categories.DESSERTS
-To Home
-avg_dist: 399.8 seconds
-
-From Home
-To UCLA Louise M. Darling Biomedical Library, Categories.LIBRARY
-To Starbucks at Target, Categories.COFFEE_SHOP
-To Mr. Rice, Categories.FOOD_ASIAN
-To Home
-avg_dist: 452.0 seconds
-
-From Home
-To UCLA Mathias Botanical Garden, Categories.OUTDOOR_SPACES
-To Starbucks at Target, Categories.COFFEE_SHOP
-To Pinches Tacos, Categories.FOOD_MEXICAN
-To Home
-avg_dist: 496.25 seconds
-
-From Home
-To Falafel Inc, Categories.FOOD_MIDDLE_EASTERN
-To Diddy Riese, Categories.DESSERTS
-To Starbucks at Broxton & Weyburn, Categories.COFFEE_SHOP
-To Westwood Branch Library, Categories.LIBRARY
-To Home
-avg_dist: 368.0 seconds
-
-From Home
-To Fat Sal's Deli, Categories.RESTAURANT
-To Dunkin', Categories.COFFEE_SHOP
-To Hammer, Categories.MUSEUM
-To Westwood Gardens Park, Categories.OUTDOOR_SPACES
-To Home
-avg_dist: 398.8 seconds
-
-normal avg_dist: 426.44500000000005 seconds
-no_library avg_dist: 416.8774193548387 seconds
-no_grocery avg_dist: 428.27222222222224 seconds
+normal avg_dist: 62.56833333333334
+no_library avg_dist: 64.20509259259259
+no_grocery avg_dist: 61.5372807017544
 
 ===============================================================================
 
@@ -368,10 +212,9 @@ avg_dist: 549.4 seconds
 From Home
 To The Boiling Crab, Categories.FOOD_AMERICAN
 To Sharetea, Categories.DESSERTS
-To Starbucks at Broxton & Weyburn, Categories.COFFEE_SHOP
 To Westwood Gardens Park, Categories.OUTDOOR_SPACES
 To Home
-avg_dist: 615.0 seconds
+avg_dist: 703.0 seconds
 
 From Home
 To UCLA Health Westwood Immediate Care, Categories.MEDICAL
@@ -379,49 +222,8 @@ To Ralphs Fare Fresh, Categories.GROCERY_STORE
 To Home
 avg_dist: 928.6666666666666 seconds
 
-From Home
-To Frida Mexican Cuisine - Westwood, Categories.FOOD_MEXICAN
-To Westwood Gardens Park, Categories.OUTDOOR_SPACES
-To Subway at Westwood Blvd, Categories.RESTAURANT
-To Sharetea, Categories.DESSERTS
-To Home
-avg_dist: 632.0 seconds
-
-From Home
-To Westwood Branch Library, Categories.LIBRARY
-To Starbucks at Westwood & Lindbrook, Categories.COFFEE_SHOP
-To First Szechuan Wok, Categories.FOOD_ASIAN
-To Home
-avg_dist: 606.5 seconds
-
-From Home
-To Westwood Gardens Park, Categories.OUTDOOR_SPACES
-To Starbucks at Westwood & Lindbrook, Categories.COFFEE_SHOP
-To Frida Mexican Cuisine - Westwood, Categories.FOOD_MEXICAN
-To Home
-avg_dist: 616.5 seconds
-
-From Home
-To Nick the Greek, Categories.FOOD_MIDDLE_EASTERN
-To Dunkin', Categories.DESSERTS
-To Dunkin', Categories.COFFEE_SHOP
-To Westwood Branch Library, Categories.LIBRARY
-To Home
-avg_dist: 613.8 seconds
-
-From Home
-To Frida Mexican Cuisine - Westwood, Categories.RESTAURANT
-To Starbucks at Westwood & Lindbrook, Categories.COFFEE_SHOP
-To Hammer, Categories.MUSEUM
-To Westwood Gardens Park, Categories.OUTDOOR_SPACES
-To Home
-avg_dist: 499.0 seconds
-
-normal avg_dist: 635.1366666666667 seconds
-no_library avg_dist: 637.8666666666666 seconds
-no_grocery avg_dist: 616.3092592592593 seconds
+normal avg_dist: 42.14055555555556
+no_library avg_dist: 40.38734567901235
+no_grocery avg_dist: 45.04239766081872
 
 ===============================================================================
-
-python math168.py  97.99s user 7.52s system 16% cpu 10:28.35 total
-(venv) ➜  math168_project git:(hanry) ✗

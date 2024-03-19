@@ -332,22 +332,23 @@ if __name__ == "__main__":
 
     # fmt: off
     routes = [
-        [Categories.COFFEE_SHOP, Categories.LIBRARY, Categories.FASTFOOD, Categories.LIBRARY],
-        [Categories.COFFEE_SHOP, Categories.LIBRARY, Categories.GROCERY_STORE],
-        [Categories.MUSEUM, Categories.COFFEE_SHOP, Categories.OUTDOOR_SPACES, Categories.RESTAURANT],
-        [Categories.FOOD_AMERICAN, Categories.DESSERTS, Categories.COFFEE_SHOP, Categories.OUTDOOR_SPACES],
-        [Categories.MEDICAL, Categories.GROCERY_STORE],
-        [Categories.FOOD_MEXICAN, Categories.OUTDOOR_SPACES, Categories.RESTAURANT, Categories.DESSERTS], 
-        [Categories.LIBRARY, Categories.COFFEE_SHOP, Categories.FOOD_ASIAN],
-        [Categories.OUTDOOR_SPACES, Categories.COFFEE_SHOP, Categories.FOOD_MEXICAN],
-        [Categories.FOOD_MIDDLE_EASTERN, Categories.DESSERTS, Categories.COFFEE_SHOP, Categories.LIBRARY],
-        [Categories.RESTAURANT, Categories.COFFEE_SHOP, Categories.MUSEUM, Categories.OUTDOOR_SPACES],
+        [Categories.COFFEE_SHOP, Categories.LIBRARY, Categories.FASTFOOD, Categories.LIBRARY],  # library
+        [Categories.COFFEE_SHOP, Categories.LIBRARY, Categories.GROCERY_STORE], # grocery and library
+        [Categories.MUSEUM, Categories.COFFEE_SHOP, Categories.OUTDOOR_SPACES, Categories.RESTAURANT],  # museum and outdoor spaces
+        [Categories.FOOD_AMERICAN, Categories.DESSERTS, Categories.OUTDOOR_SPACES], # food and dessert
+        [Categories.MEDICAL, Categories.GROCERY_STORE], # medical and grocery
+        # [Categories.FOOD_MEXICAN, Categories.OUTDOOR_SPACES, Categories.RESTAURANT, Categories.DESSERTS], 
+        # [Categories.LIBRARY, Categories.COFFEE_SHOP, Categories.FOOD_ASIAN],
+        # [Categories.OUTDOOR_SPACES, Categories.COFFEE_SHOP, Categories.FOOD_MEXICAN],
+        # [Categories.FOOD_MIDDLE_EASTERN, Categories.DESSERTS, Categories.COFFEE_SHOP, Categories.LIBRARY],
+        # [Categories.RESTAURANT, Categories.COFFEE_SHOP, Categories.MUSEUM, Categories.OUTDOOR_SPACES],
     ]
     # fmt: on
 
-    normal_weights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-    no_library = [0.25, 0.5, 1, 1, 1, 1, 0.5, 1, 0.5, 1]
-    no_grocery = [1, 0.5, 1, 1, 0.5, 1, 1, 1, 1, 1]
+    # less means less important since we scaled the inverse of duration
+    normal_weights = [1, 1, 1, 1, 1]
+    no_library = [0.2, 0.4, 1, 1, 1]  # extra don't like going to library twice
+    no_grocery = [1, 0.4, 1, 1, 0.4]
 
     a = Walkability(westwood_locations)
 
@@ -355,31 +356,22 @@ if __name__ == "__main__":
         a.set_new_home_address(home_loc)
         print(f"Home: {home} {home_loc}\n\n---\n")
 
-        route_total_duration_normal = 0
-        route_total_duration_no_library = 0
-        route_total_duration_no_grocery = 0
+        route_normal = 0
+        route_no_library = 0
+        route_no_grocery = 0
         for route in routes:
             route_avg_duration = a.random_walk(route)
             print(f"avg_dist: {route_avg_duration} seconds\n")
-            route_total_duration_normal += (
-                route_avg_duration * normal_weights[routes.index(route)]
-            )
-            route_total_duration_no_library += (
-                route_avg_duration * no_library[routes.index(route)]
-            )
-            route_total_duration_no_grocery += (
-                route_avg_duration * no_grocery[routes.index(route)]
-            )
+            accessibility = max(
+                0, (1200 - route_avg_duration) / 12
+            )  # scale to 0-100 from 0-1200
+            route_normal += accessibility * normal_weights[routes.index(route)]
+            route_no_library += accessibility * no_library[routes.index(route)]
+            route_no_grocery += accessibility * no_grocery[routes.index(route)]
 
-        print(
-            f"normal avg_dist: {route_total_duration_normal / sum(normal_weights)} seconds"
-        )
-        print(
-            f"no_library avg_dist: {route_total_duration_no_library / sum(no_library)} seconds"
-        )
-        print(
-            f"no_grocery avg_dist: {route_total_duration_no_grocery / sum(no_grocery)} seconds"
-        )
+        print(f"normal avg_dist: {route_normal / sum(normal_weights)}")
+        print(f"no_library avg_dist: {route_no_library / sum(no_library)}")
+        print(f"no_grocery avg_dist: {route_no_grocery / sum(no_grocery)}")
         print(
             "\n===============================================================================\n"
         )
