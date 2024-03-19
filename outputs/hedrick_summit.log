@@ -1,0 +1,80 @@
+Home: Hedrick Summit (34.073901567246224, -118.45274767364155)
+
+---
+
+From Home
+To Kerckhoff Coffee House, Categories.COFFEE_SHOP
+To Powell Library, Categories.LIBRARY
+To Subway at Court of Sciences, Categories.FASTFOOD
+To UCLA Science and Engineering Library, Categories.LIBRARY
+To Home
+avg_dist: 566.6 seconds
+
+From Home
+To Kerckhoff Coffee House, Categories.COFFEE_SHOP
+To Powell Library, Categories.LIBRARY
+To Ralphs Fare Fresh, Categories.GROCERY_STORE
+To Home
+avg_dist: 902.5 seconds
+
+From Home
+To Fowler, Categories.MUSEUM
+To Kerckhoff Coffee House, Categories.COFFEE_SHOP
+To Janns Steps, Categories.OUTDOOR_SPACES
+To Subway at Court of Sciences, Categories.RESTAURANT
+To Home
+avg_dist: 658.2 seconds
+
+From Home
+To Fat Sal's Deli, Categories.FOOD_AMERICAN
+To Just Boba Tea House, Categories.DESSERTS
+To Dunkin', Categories.COFFEE_SHOP
+To Westwood Gardens Park, Categories.OUTDOOR_SPACES
+To Home
+avg_dist: 905.8 seconds
+
+From Home
+To Ashe Center, Categories.MEDICAL
+To Ralphs Fare Fresh, Categories.GROCERY_STORE
+To Home
+avg_dist: 1047.3333333333333 seconds
+
+From Home
+To Pinches Tacos, Categories.FOOD_MEXICAN
+To Westwood Gardens Park, Categories.OUTDOOR_SPACES
+To Subway at Westwood Blvd, Categories.RESTAURANT
+To Sharetea, Categories.DESSERTS
+To Home
+avg_dist: 888.4 seconds
+
+From Home
+To UCLA Rosenfeld Library, Categories.LIBRARY
+To Kerckhoff Coffee House, Categories.COFFEE_SHOP
+To HIBACHI PAPI, Categories.FOOD_ASIAN
+To Home
+avg_dist: 952.5 seconds
+
+From Home
+To Sunset Canyon Recreation Center, Categories.OUTDOOR_SPACES
+To Kerckhoff Coffee House, Categories.COFFEE_SHOP
+To Pinches Tacos, Categories.FOOD_MEXICAN
+To Home
+avg_dist: 984.25 seconds
+
+From Home
+To Falafel Inc, Categories.FOOD_MIDDLE_EASTERN
+To Diddy Riese, Categories.DESSERTS
+To Starbucks at Broxton & Weyburn, Categories.COFFEE_SHOP
+To Westwood Branch Library, Categories.LIBRARY
+To Home
+avg_dist: 868.6 seconds
+
+From Home
+To Subway at Ronald Raegan, Categories.RESTAURANT
+To Starbucks at Broxton & Weyburn, Categories.COFFEE_SHOP
+To Hammer, Categories.MUSEUM
+To Westwood Gardens Park, Categories.OUTDOOR_SPACES
+To Home
+avg_dist: 929.0 seconds
+
+avg_dist: 870.3183333333334 seconds

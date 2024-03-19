@@ -1,0 +1,80 @@
+Home: Gayley Heights (34.06377741682311, -118.44862673399743)
+
+---
+
+From Home
+To Dunkin', Categories.COFFEE_SHOP
+To Westwood Branch Library, Categories.LIBRARY
+To Denny's, Categories.FASTFOOD
+To Westwood Branch Library, Categories.LIBRARY
+To Home
+avg_dist: 496.0 seconds
+
+From Home
+To Dunkin', Categories.COFFEE_SHOP
+To Westwood Branch Library, Categories.LIBRARY
+To 99 Ranch, Categories.GROCERY_STORE
+To Home
+avg_dist: 529.0 seconds
+
+From Home
+To Hammer, Categories.MUSEUM
+To Starbucks at Westwood & Lindbrook, Categories.COFFEE_SHOP
+To Westwood Gardens Park, Categories.OUTDOOR_SPACES
+To Subway at Westwood Blvd, Categories.RESTAURANT
+To Home
+avg_dist: 446.6 seconds
+
+From Home
+To Fat Sal's Deli, Categories.FOOD_AMERICAN
+To Just Boba Tea House, Categories.DESSERTS
+To Dunkin', Categories.COFFEE_SHOP
+To Westwood Gardens Park, Categories.OUTDOOR_SPACES
+To Home
+avg_dist: 414.4 seconds
+
+From Home
+To UCLA Health Westwood Immediate Care, Categories.MEDICAL
+To Ralphs Fare Fresh, Categories.GROCERY_STORE
+To Home
+avg_dist: 301.3333333333333 seconds
+
+From Home
+To Pinches Tacos, Categories.FOOD_MEXICAN
+To Westwood Gardens Park, Categories.OUTDOOR_SPACES
+To Subway at Westwood Blvd, Categories.RESTAURANT
+To Sharetea, Categories.DESSERTS
+To Home
+avg_dist: 404.8 seconds
+
+From Home
+To UCLA Louise M. Darling Biomedical Library, Categories.LIBRARY
+To Starbucks at Target, Categories.COFFEE_SHOP
+To Mr. Rice, Categories.FOOD_ASIAN
+To Home
+avg_dist: 456.75 seconds
+
+From Home
+To UCLA Mathias Botanical Garden, Categories.OUTDOOR_SPACES
+To Starbucks at Target, Categories.COFFEE_SHOP
+To Pinches Tacos, Categories.FOOD_MEXICAN
+To Home
+avg_dist: 500.25 seconds
+
+From Home
+To Falafel Inc, Categories.FOOD_MIDDLE_EASTERN
+To Diddy Riese, Categories.DESSERTS
+To Starbucks at Broxton & Weyburn, Categories.COFFEE_SHOP
+To Westwood Branch Library, Categories.LIBRARY
+To Home
+avg_dist: 375.0 seconds
+
+From Home
+To Fat Sal's Deli, Categories.RESTAURANT
+To Dunkin', Categories.COFFEE_SHOP
+To Hammer, Categories.MUSEUM
+To Westwood Gardens Park, Categories.OUTDOOR_SPACES
+To Home
+avg_dist: 408.0 seconds
+
+avg_dist: 433.2133333333333 seconds

@@ -43,7 +43,7 @@ class Walkability:
         if self.home_address:
             self.locations.insert(0, Location("Home", home_address, Categories.HOME))
         else:
-            # Default set home to Powell UCLA
+            # Default set home to Powell UCLA   maybe this is Court of Sciences?
             self.locations.insert(
                 0,
                 Location(
@@ -57,11 +57,11 @@ class Walkability:
             for category in Categories
         }
         self.coordinates_list = [location.coordinates for location in self.locations]
-        self.distance_matrix, self.duration_matrix = get_walking_directions_matrices(
-            self.coordinates_list, self.coordinates_list, API_KEY
-        )
-        self.distance_matrix = None
-        self.duration_matrix = None
+        # self.distance_matrix, self.duration_matrix = get_walking_directions_matrices(
+        #     self.coordinates_list, self.coordinates_list, API_KEY
+        # )
+        # self.distance_matrix = None
+        # self.duration_matrix = None
         self.calculate_matrices()  # Added this line to calculate matrices during initialization
 
     # Added this method to calculate matrices using batches
@@ -102,25 +102,25 @@ class Walkability:
     # get a categories_to_indexes[catergories.(whatever)]
     def random_walk(self, order_of_destinations):
         prev = 0
-        total_distance = 0
+        total_duration = 0
         total_steps = 0
         print(f"From {self.locations[0].name}")
         for categories in order_of_destinations:
-            minimum_distance = sys.maxsize
+            minimum_duration = sys.maxsize
             minimum_index = -1
             for index in self.categories_to_indexes[categories]:
-                if self.duration_matrix[prev][index] < minimum_distance:
-                    minimum_distance = self.duration_matrix[prev][index]
+                if self.duration_matrix[prev][index] < minimum_duration:
+                    minimum_duration = self.duration_matrix[prev][index]
                     minimum_index = index
             print(f"To {self.locations[minimum_index].name}, {categories}")
             prev = minimum_index
             total_steps += 1
-            total_distance += minimum_distance
+            total_duration += minimum_duration
         print(f"To {self.locations[0].name}")
         total_steps += 1
-        total_distance += self.duration_matrix[prev][0]
-        average_distance_per_step = total_distance / total_steps
-        return average_distance_per_step
+        total_duration += self.duration_matrix[prev][0]
+        average_duration_per_step = total_duration / total_steps
+        return average_duration_per_step
 
     def set_home_address(self, new_address):
         if isinstance(new_address, str):
@@ -304,7 +304,15 @@ westwood_locations = [
 
 
 if __name__ == "__main__":
-    a = Walkability(westwood_locations)
+    court_of_sciences = (34.067688225046496, -118.4421236503499)
+    deneve_plaza = (34.07049072178088, -118.45009921519527)
+    hedrick_summit = (34.073901567246224, -118.45274767364155)
+    gaylay_heights = (34.06377741682311, -118.44862673399743)
+    wilshire_margot = (34.062067885415914, -118.43366846640919)
+
+    a = Walkability(westwood_locations, home_address=hedrick_summit)
+
+    print(f"Home: {"Hedrick Summit"} {hedrick_summit}\n\n---\n")
 
     # fmt: off
     routes = [
@@ -321,9 +329,9 @@ if __name__ == "__main__":
     ]
     # fmt: on
 
-    route_total_dist = 0
+    route_total_duration = 0
     for route in routes:
-        route_avg_dist = a.random_walk(route)
-        print(f"avg_dist: {route_avg_dist} meters\n")
-        route_total_dist += route_avg_dist
-    print(f"avg_dist: {route_total_dist/len(routes)} meters")
+        route_avg_duration = a.random_walk(route)
+        print(f"avg_dist: {route_avg_duration} seconds\n")
+        route_total_duration += route_avg_duration
+    print(f"avg_dist: {route_total_duration/len(routes)} seconds")

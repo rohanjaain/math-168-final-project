@@ -1,0 +1,7 @@
+34.067688225046496, -118.4421236503499 {Court of Sciences} <red>
+34.07049072178088, -118.45009921519527 {Deneve Plaza} <red>
+34.073901567246224, -118.45274767364155 {Hedrick Summit} <red>
+34.06377741682311, -118.44862673399743 {Gayley Heights} <red>
+34.062067885415914, -118.43366846640919 {Wilshire Margot} <red>
+
+Visualized at https://www.mapcustomizer.com/map/NXVOU0lRYUJTWnM9b2xac3FYQ1A3bGM9

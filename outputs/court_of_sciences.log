@@ -1,0 +1,80 @@
+Home: Court of Sciences (34.067688225046496, -118.4421236503499)
+
+---
+
+From Home
+To Kerckhoff Coffee House, Categories.COFFEE_SHOP
+To Powell Library, Categories.LIBRARY
+To Subway at Court of Sciences, Categories.FASTFOOD
+To UCLA Science and Engineering Library, Categories.LIBRARY
+To Home
+avg_dist: 220.6 seconds
+
+From Home
+To Kerckhoff Coffee House, Categories.COFFEE_SHOP
+To Powell Library, Categories.LIBRARY
+To Ralphs Fare Fresh, Categories.GROCERY_STORE
+To Home
+avg_dist: 527.5 seconds
+
+From Home
+To UCLA Meteorite Gallery, Categories.MUSEUM
+To Kerckhoff Coffee House, Categories.COFFEE_SHOP
+To Janns Steps, Categories.OUTDOOR_SPACES
+To Subway at Court of Sciences, Categories.RESTAURANT
+To Home
+avg_dist: 254.2 seconds
+
+From Home
+To The Boiling Crab, Categories.FOOD_AMERICAN
+To Sharetea, Categories.DESSERTS
+To Starbucks at Broxton & Weyburn, Categories.COFFEE_SHOP
+To Westwood Gardens Park, Categories.OUTDOOR_SPACES
+To Home
+avg_dist: 613.6 seconds
+
+From Home
+To Ronald Raegan, Categories.MEDICAL
+To Ralphs Fare Fresh, Categories.GROCERY_STORE
+To Home
+avg_dist: 455.6666666666667 seconds
+
+From Home
+To Pinches Tacos, Categories.FOOD_MEXICAN
+To Westwood Gardens Park, Categories.OUTDOOR_SPACES
+To Subway at Westwood Blvd, Categories.RESTAURANT
+To Sharetea, Categories.DESSERTS
+To Home
+avg_dist: 573.0 seconds
+
+From Home
+To UCLA Louise M. Darling Biomedical Library, Categories.LIBRARY
+To Starbucks at Target, Categories.COFFEE_SHOP
+To Mr. Rice, Categories.FOOD_ASIAN
+To Home
+avg_dist: 454.25 seconds
+
+From Home
+To UCLA Mathias Botanical Garden, Categories.OUTDOOR_SPACES
+To Starbucks at Target, Categories.COFFEE_SHOP
+To Pinches Tacos, Categories.FOOD_MEXICAN
+To Home
+avg_dist: 394.75 seconds
+
+From Home
+To Falafel Inc, Categories.FOOD_MIDDLE_EASTERN
+To Diddy Riese, Categories.DESSERTS
+To Starbucks at Broxton & Weyburn, Categories.COFFEE_SHOP
+To Westwood Branch Library, Categories.LIBRARY
+To Home
+avg_dist: 539.8 seconds
+
+From Home
+To Subway at Court of Sciences, Categories.RESTAURANT
+To Kerckhoff Coffee House, Categories.COFFEE_SHOP
+To UCLA Meteorite Gallery, Categories.MUSEUM
+To Janns Steps, Categories.OUTDOOR_SPACES
+To Home
+avg_dist: 309.6 seconds
+
+avg_dist: 434.29666666666674 seconds
